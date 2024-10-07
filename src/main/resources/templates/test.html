@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+
+        div{
+            margin-top: 1rem;
+            overflow: hidden;
+        }
+        span{
+            width: 200px;
+            height: 200px;
+            /* padding: 1rem; */
+            border-radius: 50%;
+            border: 2px solid red;
+            z-index: -1;
+        }
+
+        button{
+            position: absolute;
+            left: 1rem;
+            animation: nam 0.3s linear forwards;
+            width: 0px;
+            opacity: 0;
+        }
+
+        @keyframes nam {
+            0%{
+                width: 0;
+                opacity: 0;
+            }
+
+            100%{
+                width: 100px;
+                opacity: 1  ;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+        <div>
+            <span>
+
+            </span>
+
+            <button >Hello</button>
+        </div>
+
+
+
+</body>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+<script>
+    AOS.init();
+  </script>
+</html>

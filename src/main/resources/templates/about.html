@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/navigo@8.12.0/lib/navigo.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      media="screen"
+      type="text/css"
+      href="assets/symphony.css?7sZEx0"
+    />
+    <link
+      rel="stylesheet"
+      media="screen"
+      type="text/css"
+      href="assets/style.css?7sZEx0"
+    />
+    <script src="assets/js/jquery-3.7.0.min.js"></script>
+
+    <style>
+      p {
+        font-size: large;
+      }
+      #hero-sec {
+        margin: 6% auto;
+
+        & h1,
+        & p {
+          text-align: center;
+        }
+      }
+
+      .img {
+        width: 100%;
+        margin: 0 auto;
+
+        & img {
+          width: 100%;
+        }
+      }
+
+      .mission-vision-values {
+        display: flex;
+        /* align-items: center; */
+        margin-top: 3rem;
+        justify-content: space-between;
+        gap: 8rem;
+
+        & .mission-vision {
+          width: 50%;
+        }
+      }
+
+      .values {
+        width: 50%;
+      }
+      .accordion {
+        margin-bottom: 10px;
+      }
+
+      .accordion-button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        font-size: 18px;
+        cursor: pointer;
+        background-color: #f1f1f1;
+        border: none;
+        outline: none;
+        text-align: left;
+        transition: 0.3s;
+        position: relative;
+      }
+
+      .accordion-button::after {
+        content: "+";
+        font-size: 20px;
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        transition: transform 0.3s;
+      }
+
+      .accordion-button.active::after {
+        content: "-";
+      }
+
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        background-color: #f9f9f9;
+        padding: 0 10px;
+      }
+
+      .accordion-content p {
+        margin: 10px 0;
+      }
+
+      .founder {
+        display: flex;
+        justify-content: space-between;
+        gap: 8rem;
+        margin-top: 2rem;
+      }
+      .home-btn {
+        border: none;
+        background: none;
+        margin: 0;
+        padding: 0;
+        text-align: start;
+        background-color: #e02e88;
+        color: white;
+        padding: 1rem;
+        /* border-radius: 2rem; */
+        text-align: center;
+
+        &:hover {
+          color: #e02e88;
+          background-color: #000000;
+          padding: 1rem;
+          /* border-radius: 2rem; */
+        }
+      }
+
+      .founder-2 {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+      }
+
+      .vision {
+        margin-top: 2rem;
+      }
+
+      @media (width < 768px) {
+        .mission-vision-values {
+          flex-direction: column;
+          gap: 2rem;
+          & .mission-vision {
+            width: 100%;
+          }
+
+          .values {
+            width: 100%;
+          }
+        }
+
+        .founder {
+          flex-direction: column-reverse;
+          gap: 2rem;
+        }
+
+        .founder-2 {
+          margin-bottom: 3rem;
+        }
+
+        #hero-sec {
+          margin-top: 25% !important;
+        }
+      }
+
+      .about-icon {
+        height: 8rem;
+        width: 9rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem 0;
+
+        & img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      @media (width < 768px) {
+        .about-icon {
+          height: 5rem;
+          width: 6rem;
+          margin: 0.5rem auto;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="header-placeholder"></div>
+
+    <div class="container" id="hero-sec">
+      <h1>About Us</h1>
+      <p>
+        celebrating women who ride with passion, fueling <br />
+        dreams and defining adventure.
+      </p>
+    </div>
+
+    <div
+      class="svg-div"
+      style="position: absolute; right: 3rem; z-index: -1; bottom: 12rem"
+    >
+      <img src="/assets/ourimages/g_p.svg" alt="" />
+    </div>
+
+    <div class="container">
+      <div class="img">
+        <img src="/assets/ourimages/about-hero.png" alt="image" />
+      </div>
+    </div>
+
+    <div class="container mission-vision-values">
+      <div class="mission-vision">
+        <div class="mission">
+          <h2>our mission</h2>
+          <p>
+            Our mission is to amplify the voices of women riders around the
+            world, providing them with a platform to share their journeys,
+            connect with other like-minded individuals, and inspire the next
+            generation of female motorcyclists.
+          </p>
+          <a href="/ourmission" class="btn home-btn"> read more </a>
+        </div>
+        <div class="vision">
+          <h2>our vision</h2>
+          <p>
+            We envision a world where women riders are recognized and valued for
+            their contributions
+          </p>
+          <a href="/ourvision" class="btn home-btn"> read more </a>
+        </div>
+      </div>
+      <div class="values">
+        <h2>our values</h2>
+
+        <div class="accordion"></div>
+      </div>
+    </div>
+
+    <div class="container founder" style="position: relative">
+      <div
+        class="svg-div"
+        style="position: absolute; right: 17rem; z-index: -1; bottom: 17rem"
+      >
+        <img src="/assets/ourimages/g_p.svg" alt="" />
+      </div>
+      <div class="founder-content">
+        <div class="about-icon">
+          <img src="/assets/ourimages/about-bike.png" alt="" />
+        </div>
+        <h3>About Founder</h3>
+        <p>
+          Pavan sai is the visionary behind Women Riders Showcase. With a
+          profound respect for the strength and spirit of women riders, Pavan
+          sai launched this platform to celebrate and support the incredible
+          women who make a mark in the motorcycle community.
+        </p>
+        <a class="btn home-btn" href="/about-ceo"> Read More </a>
+      </div>
+      <div class="img">
+        <img src="/assets/ourimages/md.jpg" alt="" />
+      </div>
+    </div>
+
+    <div class="container founder founder-2" style="position: relative;">
+
+      <div
+      class="svg-div"
+      style="position:  absolute;
+  
+      z-index: -1;
+      bottom: -6rem;
+      left: -6rem;"
+         >
+      <img src="/assets/ourimages/g_p.svg" alt="" />
+    </div>
+
+      <div class="founder-content">
+        <div class="about-icon">
+          <img src="/assets/ourimages/about-car.png" alt="" />
+        </div>
+        <h3>Life at Wor</h3>
+        <p>
+          We thrive on teamwork and creativity, bringing together diverse
+          perspectives to drive our mission forward. Every team member’s voice
+          is valued, and we work together to overcome challenges and celebrate
+          successes.
+        </p>
+      </div>
+      <div class="img">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWTbudYgr4aDMae6Jb0BK1QNEqtBljWILtsg&s"
+          alt=""
+        />
+      </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="/load-dom.js"></script>
+  </body>
+
+  <script>
+    let accordion = document.getElementsByClassName("accordion")[0];
+
+    const data = [
+      {
+        title: "empowerment",
+        text: "Our platform provides women with opportunities for financial independence, personal growth, and career advancement.",
+      },
+      {
+        title: "community",
+        text: "We foster a sisterhood that uplifts and encourages every woman to succeed, creating meaningful connections that extend beyond the app.",
+      },
+      {
+        title: "inclusivity",
+        text: "We are committed to providing equal opportunities for all women, offering a platform where everyone can thrive.",
+      },
+      {
+        title: "inspiration",
+        text: "We believe every journey starts with inspiration, and at WOR, we aim to inspire women to pursue new horizons.",
+      },
+      {
+        title: "respect",
+        text: "We are committed to creating a respectful environment where women feel empowered, valued, and heard.",
+      },
+    ];
+
+    accordion.innerHTML = data
+      .map((e, index) => {
+        return `<button class="accordion-button" onclick="toggleAccordion(this)">
+               <h4>${e.title}</h4>
+            </button>
+            
+            <div class="accordion-content">
+                <p>${e.text}</p>
+            </div>`;
+      })
+      .join(""); // Join the array into a single string to avoid commas
+
+    function toggleAccordion(button) {
+      const content = button.nextElementSibling;
+
+      // Toggle the content visibility
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null; // Collapse
+        button.classList.remove("active");
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px"; // Expand
+        button.classList.add("active");
+      }
+    }
+  </script>
+
+  <script
+    src="https://kit.fontawesome.com/f0b97481ed.js"
+    crossorigin="anonymous"
+  ></script>
+
+  <script src="assets/symphony.js?7sZEx0" type="text/javascript"></script>
+  <script src="assets/scripts.js?7sZEx0" type="text/javascript"></script>
+</html>
